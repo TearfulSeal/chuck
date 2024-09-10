@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link href="/static/chuck.ico" rel="icon">
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <title>Фразы Чака Норриса</title>
+    <script>
+        function eng() {
+        document.getElementById('q').innerHTML = "{{eng_quote}}"
+        }
+        function ru() {
+            document.getElementById('q').innerHTML = "{{quote}}"
+        }
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <img src="static/chuck{{random}}.png" alt="Фотография Чака Норриса" />
+        <p id="q">
+            {{quote}}
+        </p>
+    </div>
+    <div align="right">
+
+        <button type="button"  onclick="document.location='/'">
+
+            Обновить страницу
+        </button>
+
+        <button type="button"
+                onclick="eng()">
+            Оригинальная фраза
+        </button>
+        <button type="button"
+                onclick="ru()">
+            Перевод
+        </button>
+
+    </div>
+</body>
+
+</html>
