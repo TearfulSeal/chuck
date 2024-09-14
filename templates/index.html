@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ru">
 
@@ -12,18 +12,24 @@
 
     <title>Фразы Чака Норриса</title>
     <script>
-        function eng() {
-        document.getElementById('q').innerHTML = "{{eng_quote}}"
+        let tr = false;
+
+        function trans() {
+            if (tr == false) {
+                document.getElementById('q').innerHTML = "{{eng_quote}}";
+                tr = true;
+            } else {
+                document.getElementById('q').innerHTML = "{{quote}}";
+                tr = false;
+            }
         }
-        function ru() {
-            document.getElementById('q').innerHTML = "{{quote}}"
-        }
+   
     </script>
 </head>
 
 <body>
     <div class="flex-container">
-        <img src="static/chuck{{random}}.png" alt="Фотография Чака Норриса" />
+        <img src="static/img/{{random}}" alt="Фотография Чака Норриса" />
         <p id="q">
             {{quote}}
         </p>
@@ -36,11 +42,7 @@
         </button>
 
         <button type="button"
-                onclick="eng()">
-            Оригинальная фраза
-        </button>
-        <button type="button"
-                onclick="ru()">
+                onclick="trans()">
             Перевод
         </button>
 
